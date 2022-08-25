@@ -1,0 +1,35 @@
+---
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.1.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-added-large-files
+  - repo: local
+    hooks:
+      - id: yamllint
+        name: yamllint
+        entry: yamllint -s
+        language: system
+        types: [file, yaml]
+      - id: isort
+        name: isort
+        entry: isort --src python/src -m VERTICAL_GRID_GROUPED
+        language: system
+        types: [python]
+      - id: yapf
+        name: yapf
+        entry: yapf -i
+        language: system
+        types: [python]
+      - id: pylint
+        name: pylint
+        entry: pylint
+        language: system
+        types: [python]
+        args:
+          - "-rn"  # Only display messages
+          - "-sn"  # Don't display the score

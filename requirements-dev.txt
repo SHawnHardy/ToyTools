@@ -1,0 +1,13 @@
+pipdeptree
+pip-licenses
+isort
+yapf
+pylint
+yamllint
+pytest
+pysnooper
+ipykernel
+matplotlib
+jupyter
+python-dotenv
+pre-commit
