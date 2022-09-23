@@ -39,3 +39,6 @@ bark_msg() {
 }
 
 alias cp="cp -i"
+
+# Enable script set: python
+source $(dirname $(readlink -f "$0"))/python/toy_py.sh

@@ -1,0 +1,4 @@
+PyYAML==6.0
+tqdm==4.64.0
+akshare==1.7.30
+torrentfile==0.8.1
