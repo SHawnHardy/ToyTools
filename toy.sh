@@ -40,5 +40,11 @@ bark_msg() {
 
 alias cp="cp -i"
 
+media_summary() {
+    mediainfo --Inform="General;Overall Bit Rate: %OverallBitRate%" $1 | awk '{$NF=sprintf("%d bps=%.1f Mbps",$NF,$NF/1000000)}1'
+    mediainfo --Inform="Video;%Format% %Width%x%Height% %FrameRate%p %ScanType% %BitRate%" $1 | awk '{$NF=sprintf("%d bps=%.1f Mbps",$NF,$NF/1000000)}1'
+    mediainfo --Inform="General;%Audio_Format_List%" $1
+}
+
 # Enable script set: python
 source $(dirname $(readlink -f "$0"))/python/toy_py.sh
