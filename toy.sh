@@ -46,5 +46,7 @@ media_summary() {
     mediainfo --Inform="General;%Audio_Format_List%" $1
 }
 
+alias backup_home="BORG_BASE_DIR=$HOME borg create --stats --progress --compression auto,lz4 ${BORG_REPO_PATH}::{now:%Y%m%d-%H%M%S} --patterns-from ~/.toy/configs/borg_pattern"
+
 # Enable script set: python
 source $(dirname $(readlink -f "$0"))/python/toy_py.sh

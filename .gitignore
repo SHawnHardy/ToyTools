@@ -5,8 +5,9 @@
 *.pyc
 
 *env.sh
-/configs/*.yml
+/configs/*
 !/configs/*.sample.yml
+!/configs/*.sample
 
 /*.ipynb
 /.ipynb_checkpoints
